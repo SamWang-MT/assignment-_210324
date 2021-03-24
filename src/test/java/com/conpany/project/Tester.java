@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ServiceApplication.class)
-//@Transactional
 @Rollback
 public abstract class Tester {}
 

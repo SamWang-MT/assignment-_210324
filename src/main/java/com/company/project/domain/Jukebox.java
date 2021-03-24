@@ -2,7 +2,12 @@ package com.company.project.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javassist.expr.NewArray;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,15 +20,19 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Jukebox {
 
-    @JsonProperty
-    private String id;
-    @JsonProperty
-    private String model;
-    @JsonProperty
-    private List<JukeboxComponent> components;
+	@JsonProperty
+	private String id;
+	@JsonProperty
+	private String model;
+	@JsonProperty
+	private List<JukeboxComponent> components;
 
-    @JsonIgnore
-    public List<String> getComponentsNames() {
-        return components.stream().map(JukeboxComponent::getName).collect(Collectors.toList());
-    }
+	@JsonIgnore
+	public Set<String> getComponentsNamesSet() {
+		Set<String> rt = new HashSet<String>();
+		for (JukeboxComponent component : components) {
+			rt.add(component.getName());
+		}
+		return rt;
+	}
 }

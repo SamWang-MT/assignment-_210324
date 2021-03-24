@@ -9,6 +9,7 @@ public class ResultGenerator {
 	private static final String DEFAULT_UNAUTHORIZED_MESSAGE = "UNAUTHORIZED";
 	private static final String DEFAULT_INTERNAL_SERVER_ERROR_MESSAGE = "INTERNAL SERVER ERROR";
 	private static final String DEFAULT_PARAMETER_EXCEPTION_MESSAGE = "PARAMETER_EXCEPTION";
+	private static final String DEFAULT_EMPTY_RESULT_MESSAGE = "EMPTY_RESULT";
 
 	@SuppressWarnings("rawtypes")
 	public static Result genSuccessResult() {
@@ -43,5 +44,9 @@ public class ResultGenerator {
 	@SuppressWarnings("rawtypes")
 	public static Result genInternalServerErrorResult() {
 		return new Result().setCode(ResultCode.INTERNAL_SERVER_ERROR).setMessage(DEFAULT_INTERNAL_SERVER_ERROR_MESSAGE);
+	}
+	@SuppressWarnings("rawtypes")
+	public static Result genEmptyResultResult() {
+		return new Result().setCode(ResultCode.SUCCESS).setMessage(DEFAULT_EMPTY_RESULT_MESSAGE);
 	}
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
+import com.company.project.domain.MockDbEntity;
 import com.company.project.domain.Settings;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -31,7 +32,7 @@ public class MockDBloader implements ApplicationRunner {
 	@Autowired
 	private ResourceLoader resourceLoader;
 
-	public static MockDbEntity mockDbEntity;
+//	public static MockDbEntity mockDbEntity;
 
 	@Value("${mock.json.path}")
 	private String mockJsonFilePath;
@@ -40,11 +41,14 @@ public class MockDBloader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		Resource jsonFile = resourceLoader.getResource(mockJsonFilePath);
-		MockDBloader.mockDbEntity = objectMapper.readerFor(MockDbEntity.class).readValue(jsonFile.getInputStream());
+		MockDbEntity mockDbEntity = objectMapper.readerFor(MockDbEntity.class).readValue(jsonFile.getInputStream());
 
-		Settings settings = MockDBloader.mockDbEntity.getSettings();
-		List<Jukebox> jukeboxes = MockDBloader.mockDbEntity.getJukes();
-		List<JukeboxSetting> jukeboxSettings = MockDBloader.mockDbEntity.getJukeboxSettings();
+		MockDbContainer.initContainer(mockDbEntity);
+
+//		Settings settings = MockDBloader.mockDbEntity.getSettings();
+//		List<Jukebox> jukeboxes = MockDBloader.mockDbEntity.getJukes();
+//		List<JukeboxSetting> jukeboxSettings = MockDBloader.mockDbEntity.getJukeboxSettings();
+
 	}
 
 }
