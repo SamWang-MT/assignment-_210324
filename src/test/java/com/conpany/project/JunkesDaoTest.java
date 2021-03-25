@@ -1,5 +1,10 @@
 package com.conpany.project;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -22,11 +27,16 @@ public class JunkesDaoTest extends BaseTester {
 		List<JukeboxSetting> jukeSettings = MockDbContainer.getJukeSettings();
 		List<JukeboxSetting> availableSettings = MockDbContainer.getAvailableSettings();
 		Map<String, List<Jukebox>> availableSettingsMap = MockDbContainer.getAvailableSettingsMap();
-		
-		
-		
-		
-		
+
+		assertNotNull("MockDbContainer Initialization failure ", MockDbContainer.mockDbEntity);
+		assertTrue("Quantity of jukeboxes in MockDbContainer  ", jukeboxes.size() == 4);
+		assertTrue("Quantity of settings in MockDbContainer ", jukeSettings.size() == 5);
+		assertTrue("Quantity of availableSettings in MockDbContainer ", availableSettings.size() == 4);
+		assertTrue("Quantity of availableSettingsMap in MockDbContainer ", availableSettingsMap.size() == 4);
+		assertNull("S2 available ", availableSettingsMap.get("S2"));
+		assertTrue("Quantity of S3 available jukeboxes in MockDbContainer  ",
+				availableSettingsMap.get("S3").size() == 3);
+
 	}
 
 }

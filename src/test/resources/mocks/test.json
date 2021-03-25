@@ -11,7 +11,7 @@
 			{
 				"id": "S2",
 				"requires": [
-					"req1"
+					"req5"
 				]
 			},
 			{

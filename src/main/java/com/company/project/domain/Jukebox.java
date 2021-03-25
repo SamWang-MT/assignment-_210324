@@ -27,6 +27,9 @@ public class Jukebox {
 	@JsonProperty
 	private List<JukeboxComponent> components;
 
+	/**
+	 * a set of sets for components
+	 */
 	@JsonIgnore
 	public Set<String> getComponentsNamesSet() {
 		Set<String> rt = new HashSet<String>();

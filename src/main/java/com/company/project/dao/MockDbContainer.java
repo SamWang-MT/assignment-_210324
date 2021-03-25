@@ -13,9 +13,7 @@ import com.company.project.domain.JukeboxSetting;
 import com.company.project.domain.MockDbEntity;
 
 /**
- * 
- * @author Administrator
- *
+ * MockDbContainer
  */
 public class MockDbContainer {
 	public static MockDbEntity mockDbEntity;

@@ -19,8 +19,4 @@ public class MockDbEntity {
         return settings.getSettings();
     }
     
-
-    
-    
-    
 }

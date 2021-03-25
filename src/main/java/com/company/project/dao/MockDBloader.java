@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 
 import com.company.project.domain.MockDbEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
+/**
+ * Load the JSON file after IOC startup;
+	Data container initialization;
+ *
+ */
+
 
 @Component
 public class MockDBloader implements ApplicationRunner {
