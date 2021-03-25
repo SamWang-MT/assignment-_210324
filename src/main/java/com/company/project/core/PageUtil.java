@@ -35,6 +35,11 @@ public class PageUtil {
 		if (pageNum > pageCount) {
 			pageNum = pageCount;
 		}
+
+		if (pageNum < 1) {
+			pageNum = 1;
+		}
+
 		if (!pageNum.equals(pageCount)) {
 			fromIndex = (pageNum - 1) * pageSize;
 			toIndex = fromIndex + pageSize;

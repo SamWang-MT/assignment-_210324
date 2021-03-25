@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.bytebuddy.asm.Advice.This;
 
 /**
- * 统一API响应结果封装
+ * Unified API response result encapsulation
  */
 public class Result<T> {
     private int code;

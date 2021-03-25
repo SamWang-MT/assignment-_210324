@@ -1,0 +1,83 @@
+{
+	"settings": {
+		"settings": [
+			{
+				"id": "S1",
+				"requires": [
+					"req1",
+					"req2"
+				]
+			},
+			{
+				"id": "S2",
+				"requires": [
+					"req1"
+				]
+			},
+			{
+				"id": "S3",
+				"requires": [
+					"req2"
+				]
+			},
+			{
+				"id": "S4",
+				"requires": [
+					"req3"
+				]
+			},
+			{
+				"id": "S0",
+				"requires": [
+				]
+			}
+		]
+	},
+	"jukes": [
+		{
+			"id": "J1",
+			"model": "model-A",
+			"components": [
+				{
+					"name": "req1"
+				},
+				{
+					"name": "req2"
+				},
+				{
+					"name": "req3"
+				}
+			]
+		},
+		{
+			"id": "J2",
+			"model": "model-B",
+			"components": [
+				{
+					"name": "req1"
+				},
+				{
+					"name": "req2"
+				}
+			]
+		},
+		{
+			"id": "J3",
+			"model": "model-B",
+			"components": [
+				{
+					"name": "req2"
+				}
+			]
+		},
+		{
+			"id": "J4",
+			"model": "model-A",
+			"components": [
+				{
+					"name": "req4"
+				}
+			]
+		}
+	]
+}

@@ -74,4 +74,10 @@ public class MockDbContainer {
 		return availableSettings;
 	}
 
+	public static Map<String, List<Jukebox>> getAvailableSettingsMap() {
+
+		return settingsAvailableJukeMap;
+
+	}
+
 }

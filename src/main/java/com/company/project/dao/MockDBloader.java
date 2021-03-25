@@ -1,7 +1,5 @@
 package com.company.project.dao;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -10,19 +8,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
-import com.company.project.domain.Jukebox;
-import com.company.project.domain.JukeboxSetting;
 import com.company.project.domain.MockDbEntity;
-import com.company.project.domain.Settings;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-/**
- * @ClassName: MockDBloader
- * @author: Merdader
- * @Date: Mar. 24, 2021 1:12:21 a.m.
- * 
- * @description:
- */
 
 @Component
 public class MockDBloader implements ApplicationRunner {
