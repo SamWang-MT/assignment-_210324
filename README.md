@@ -312,13 +312,13 @@ http://localhost:8080/swagger-ui.html#/
 |                    | S0          |                        |           |      |         |
 |                    |             |                        |           |      |         |
 |                    | **ID**      | **components**         | **model** |      |         |
-| **junkboxs**       | J1          | req1                   | req2      | req3 | model-A |
+| **jukeboxs**       | J1          | req1                   | req2      | req3 | model-A |
 |                    | J2          | req1                   | req2      |      | model-B |
 |                    | J3          |                        | req2      |      | model-B |
 |                    | J4          |                        |           | req4 | model-A |
 |                    |             |                        |           |      |         |
 |                    |             |                        |           |      |         |
-|                    | **Mapting** | **setting--> junkbox** |           |      |         |
+|                    | **Mapting** | **setting--> jukboxs** |           |      |         |
 | **settingMap**     | settingID   | junkBoxes              |           |      |         |
 |                    | S1          | J1                     | J2        |      |         |
 |                    | S2          | unavailable            |           |      |         |
