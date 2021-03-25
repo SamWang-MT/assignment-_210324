@@ -27,7 +27,8 @@
 
 ```
 ## Apis
-
+TEST IN SWAGGER 
+http://localhost:8080/swagger-ui.html#/
 ```json
 {
 	"swagger": "2.0",
