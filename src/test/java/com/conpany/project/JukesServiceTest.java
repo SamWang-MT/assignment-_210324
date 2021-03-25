@@ -12,12 +12,12 @@ import javax.annotation.Resource;
 
 import org.junit.Test;
 import com.company.project.domain.Jukebox;
-import com.company.project.service.JunkesServiceInterface;
+import com.company.project.service.JukesServiceInterface;
 
 public class JukesServiceTest extends BaseTester {
 
 	@Resource
-	private JunkesServiceInterface jukesService;
+	private JukesServiceInterface jukesService;
 
 //
 //			=================================

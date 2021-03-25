@@ -13,8 +13,8 @@
 			"description": "Jukes Controller"
 		},
 		{
-			"name": "junkes-info-controller",
-			"description": "Junkes Info Controller"
+			"name": "jukes-info-controller",
+			"description": "jukes Info Controller"
 		}
 	],
 	"paths": {
@@ -83,7 +83,7 @@
 		"/api/tech-assignment/jukes": {
 			"get": {
 				"tags": [
-					"junkes-info-controller"
+					"jukes-info-controller"
 				],
 				"summary": "Get Jukeboxs",
 				"description": "Get all jukes",
@@ -132,7 +132,7 @@
 		"/api/tech-assignment/settings": {
 			"get": {
 				"tags": [
-					"junkes-info-controller"
+					"jukes-info-controller"
 				],
 				"summary": "Get Jukesettins",
 				"description": "Get all juke settins",

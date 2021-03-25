@@ -18,7 +18,7 @@ import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
-import com.company.project.service.JunkesServiceInterface;
+import com.company.project.service.JukesServiceInterface;
 
 /**
  * Jukebox API : Get all jukes. Settings API : Get all Settings.
@@ -28,9 +28,9 @@ import com.company.project.service.JunkesServiceInterface;
 
 @RestController
 @RequestMapping(ProjectConstant.BASE_URL)
-public class JunkesInfoController {
+public class JukesInfoController {
 	@Resource
-	private JunkesServiceInterface jukesService;
+	private JukesServiceInterface jukesService;
 
 	@Value("${api.default.pagesize}")
 	private int defaultPageSize;

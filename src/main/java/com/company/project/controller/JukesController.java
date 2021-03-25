@@ -17,7 +17,7 @@ import com.company.project.core.ProjectConstant;
 import com.company.project.core.Result;
 import com.company.project.core.ResultGenerator;
 import com.company.project.domain.Jukebox;
-import com.company.project.service.JunkesServiceInterface;
+import com.company.project.service.JukesServiceInterface;
 
 /**
  * Returns a paginated list of jukeboxes that suppport a given setting id.
@@ -29,7 +29,7 @@ import com.company.project.service.JunkesServiceInterface;
 @RequestMapping(ProjectConstant.BASE_URL)
 public class JukesController {
 	@Resource
-	private JunkesServiceInterface jukesService;
+	private JukesServiceInterface jukesService;
 
 	@Value("${api.default.pagesize}")
 	private int defaultPageSize;

@@ -13,10 +13,10 @@ import com.company.project.core.PageUtil;
 import com.company.project.dao.MockDbContainer;
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
-import com.company.project.service.JunkesServiceInterface;
+import com.company.project.service.JukesServiceInterface;
 
 @Service
-public class JukesService implements JunkesServiceInterface {
+public class JukesService implements JukesServiceInterface {
 
 	@Override
 	public List<Jukebox> getJukesBySettingId(String settingId, Optional<String> model, int pageOffset, int pageLimit) {

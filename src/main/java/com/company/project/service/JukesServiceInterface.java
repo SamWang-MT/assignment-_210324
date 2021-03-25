@@ -14,7 +14,7 @@ import com.company.project.domain.JukeboxSetting;
  * @description: 
  */
 
-public interface JunkesServiceInterface {
+public interface JukesServiceInterface {
 
 	/**
 	 * get Jukes By SettingId [junke's model]
