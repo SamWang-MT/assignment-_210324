@@ -7,7 +7,7 @@ import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
 
 /** 
- * @ClassName: JunkesServiceInterface    
+ * @ClassName: JukesServiceInterface    
  * @author: Merdader
  * @Date: Mar. 25, 2021 10:33:44 a.m.
  * 
@@ -17,7 +17,7 @@ import com.company.project.domain.JukeboxSetting;
 public interface JukesServiceInterface {
 
 	/**
-	 * get Jukes By SettingId [junke's model]
+	 * get Jukes By SettingId [juke's model]
 	 * @param settingId
 	 * @param model
 	 * @param pageOffset

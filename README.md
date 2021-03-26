@@ -319,7 +319,7 @@ http://localhost:8080/swagger-ui.html#/
 |                    |             |                        |           |      |         |
 |                    |             |                        |           |      |         |
 |                    | **Mapting** | **setting--> jukboxs** |           |      |         |
-| **settingMap**     | settingID   | junkBoxes              |           |      |         |
+| **settingMap**     | settingID   | jukBoxes              |           |      |         |
 |                    | S1          | J1                     | J2        |      |         |
 |                    | S2          | unavailable            |           |      |         |
 |                    | S3          | J1                     | J2        | J3   |         |

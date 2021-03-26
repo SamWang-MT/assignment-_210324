@@ -19,7 +19,7 @@ import com.company.project.domain.JukeboxSetting;
  * Test MockDbContainer
  *
  */
-public class JunkesDaoTest extends BaseTester {
+public class JukesDaoTest extends BaseTester {
 
 	@Test
 	public void getMockDbContainerDatasTest() throws Exception {

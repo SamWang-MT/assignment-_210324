@@ -16,9 +16,9 @@ import com.company.project.domain.MockDbEntity;
  * MockDbContainer
  */
 public class MockDbContainer {
-	public static MockDbEntity mockDbEntity;
-	private static Map<String, List<Jukebox>> settingsAvailableJukeMap = new HashMap<String, List<Jukebox>>();
-	private static List<JukeboxSetting> availableSettings = new ArrayList<JukeboxSetting>();
+	private static MockDbEntity mockDbEntity;
+	private final static Map<String, List<Jukebox>> settingsAvailableJukeMap = new HashMap<String, List<Jukebox>>();
+	private final static List<JukeboxSetting> availableSettings = new ArrayList<JukeboxSetting>();
 
 	public MockDbContainer() {
 		super();
