@@ -28,7 +28,6 @@ public class JukesDaoTest extends BaseTester {
 		List<JukeboxSetting> availableSettings = MockDbContainer.getAvailableSettings();
 		Map<String, List<Jukebox>> availableSettingsMap = MockDbContainer.getAvailableSettingsMap();
 
-		assertNotNull("MockDbContainer Initialization failure ", MockDbContainer.mockDbEntity);
 		assertTrue("Quantity of jukeboxes in MockDbContainer  ", jukeboxes.size() == 4);
 		assertTrue("Quantity of settings in MockDbContainer ", jukeSettings.size() == 5);
 		assertTrue("Quantity of availableSettings in MockDbContainer ", availableSettings.size() == 4);
