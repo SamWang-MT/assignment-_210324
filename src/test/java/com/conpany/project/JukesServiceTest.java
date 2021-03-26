@@ -45,14 +45,17 @@ public class JukesServiceTest extends BaseTester {
 	public void getJukesBySettingIdTest() throws Exception {
 		Map<String, List<Jukebox>> testResultMap = new HashMap<String, List<Jukebox>>();
 
-		testResultMap.put("Query PARM :S0, empty, PAGE1-5",
-				jukesService.getJukesBySettingId("S0", Optional.empty(), 1, 5));
-		testResultMap.put("Query PARM :S0, empty, PAGE2-2",
-				jukesService.getJukesBySettingId("S0", Optional.empty(), 2, 2));
+		testResultMap.put("Query PARM :S0, empty, PAGE1-5", jukesService.getPaginatedListBySettingIdandModel("S0",
+				Optional.empty(), Optional.of(1), Optional.of(5)));
+		testResultMap.put("Query PARM :S0, empty, PAGE2-2", jukesService.getPaginatedListBySettingIdandModel("S0",
+				Optional.empty(), Optional.of(2), Optional.of(2)));
 		testResultMap.put("Query PARM :S3, model-B, PAGE1-5",
-				jukesService.getJukesBySettingId("S3", Optional.of("model-B"), 1, 5));
-		testResultMap.put("Query PARM :S2, empty, PAGE1-5",
-				jukesService.getJukesBySettingId("S2", Optional.empty(), 1, 5));
+//				jukesService.getJukesBySettingId("S3", Optional.of("model-B"), 1, 5));
+				jukesService.getPaginatedListBySettingIdandModel("S3", Optional.empty(), Optional.of(1),
+						Optional.of(5)));
+
+		testResultMap.put("Query PARM :S2, empty, PAGE1-5", jukesService.getPaginatedListBySettingIdandModel("S2",
+				Optional.empty(), Optional.of(1), Optional.of(1)));
 
 		assertTrue("Query PARM :S0, empty, PAGE1-5", testResultMap.get("Query PARM :S0, empty, PAGE1-5").size() == 4);
 		assertTrue("Query PARM :S0, empty, PAGE2-2", testResultMap.get("Query PARM :S0, empty, PAGE2-2").size() == 2);

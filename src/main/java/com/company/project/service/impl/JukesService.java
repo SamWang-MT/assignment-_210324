@@ -3,23 +3,27 @@ package com.company.project.service.impl;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Service;
 
-import com.company.project.core.PageUtil;
 import com.company.project.dao.MockDbContainer;
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
 import com.company.project.service.JukesServiceInterface;
 
 @Service
+//public class JukesService implements JukesServiceInterface {
 public class JukesService implements JukesServiceInterface {
+	@Value("${api.default.pagesize}")
+	private int defaultPageSize;
 
 	@Override
-	public List<Jukebox> getJukesBySettingId(String settingId, Optional<String> model, int pageOffset, int pageLimit) {
+	public PagedListHolder<Jukebox> getPaginateJukesByIdandModel(String settingId, Optional<String> model,
+			Optional<Integer> offset, Optional<Integer> limit) {
 
 //	Map<String, List<Jukebox>> availableSettingsMap = MockDbContainer.getAvailableSettingsMap();
 		List<Jukebox> jukeboxesbySetting = MockDbContainer.getJukeboxesbySetting(settingId);
@@ -36,8 +40,12 @@ public class JukesService implements JukesServiceInterface {
 				}
 			}
 		}
-		return PageUtil.startPage(jukeboxesCloned, pageOffset, pageLimit);
-
+		int pageLimit = limit.orElse(defaultPageSize);
+		int pageOffset = offset.orElse(1);
+		PagedListHolder<Jukebox> pagedListHolder = new PagedListHolder<Jukebox>(jukeboxesCloned);
+		pagedListHolder.setPage(pageOffset);
+		pagedListHolder.setPageSize(pageLimit);
+		return pagedListHolder;
 	}
 
 	private List<Jukebox> deepCloneList(List<Jukebox> jukeboxesbySetting) {
@@ -56,21 +64,30 @@ public class JukesService implements JukesServiceInterface {
 	}
 
 	@Override
-	public List<Jukebox> getJukes(int pageOffset, int pageLimit) {
+	public List<Jukebox> getPaginatedListBySettingIdandModel(String settingId, Optional<String> model,
+			Optional<Integer> offset, Optional<Integer> limit) {
+		return getPaginateJukesByIdandModel(settingId, model, offset, limit).getPageList();
+	}
+
+	@Override
+	public List<Jukebox> getPaginatedJukesList(Optional<Integer> offset, Optional<Integer> limit) {
 		List<Jukebox> jukeboxes = MockDbContainer.getJukeboxes();
-		return PageUtil.startPage(jukeboxes, pageOffset, pageLimit);
+		PagedListHolder<Jukebox> pagedListHolder = new PagedListHolder<Jukebox>(jukeboxes);
+		
+		pagedListHolder.setPage(offset.orElse(1));
+		pagedListHolder.setPageSize(limit.orElse(defaultPageSize));
+		return pagedListHolder.getPageList();
 	}
 
 	@Override
-	public List<JukeboxSetting> getJukeSettings(int pageOffset, int pageLimit) {
+	public List<JukeboxSetting> getPaginatedJukeSettingList(Optional<Integer> offset, Optional<Integer> limit) {
 		List<JukeboxSetting> jukeSettings = MockDbContainer.getJukeSettings();
-		return PageUtil.startPage(jukeSettings, pageOffset, pageLimit);
+		PagedListHolder<JukeboxSetting> pagedListHolder = new PagedListHolder<JukeboxSetting>(jukeSettings);
+		
+		pagedListHolder.setPage(offset.orElse(1));
+		pagedListHolder.setPageSize(limit.orElse(defaultPageSize));
+		return pagedListHolder.getPageList();
 	}
 
-	@Override
-	public List<JukeboxSetting> getAvailableSettings(int pageOffset, int pageLimit) {
-		List<JukeboxSetting> availableSettings = MockDbContainer.getAvailableSettings();
-		return PageUtil.startPage(availableSettings, pageOffset, pageLimit);
-	}
 
 }

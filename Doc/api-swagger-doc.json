@@ -14,7 +14,7 @@
 		},
 		{
 			"name": "jukes-info-controller",
-			"description": "jukes Info Controller"
+			"description": "Jukes Info Controller"
 		}
 	],
 	"paths": {
@@ -46,14 +46,14 @@
 					{
 						"name": "offset",
 						"in": "query",
-						"description": "Index start the page (optional)",
+						"description": "Index start the page (optional) [default value is 1]",
 						"required": false,
 						"type": "string"
 					},
 					{
 						"name": "limit",
 						"in": "query",
-						"description": "Page size (optional)",
+						"description": "Page size (optional) [default value is 20",
 						"required": false,
 						"type": "string"
 					}
@@ -95,14 +95,14 @@
 					{
 						"name": "offset",
 						"in": "query",
-						"description": "Index start the page (optional)",
+						"description": "Index start the page (optional) [Default value is 1]",
 						"required": false,
 						"type": "string"
 					},
 					{
 						"name": "limit",
 						"in": "query",
-						"description": "Page size (optional)",
+						"description": "Page size (optional) [default value is 20]",
 						"required": false,
 						"type": "string"
 					}
@@ -144,14 +144,14 @@
 					{
 						"name": "offset",
 						"in": "query",
-						"description": "Index start the page (optional)",
+						"description": "Index start the page (optional) [Default value is 1]",
 						"required": false,
 						"type": "string"
 					},
 					{
 						"name": "limit",
 						"in": "query",
-						"description": "Page size (optional)",
+						"description": "Page size (optional) [default value is 20",
 						"required": false,
 						"type": "string"
 					}

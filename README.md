@@ -46,255 +46,30 @@ http://localhost:8080/swagger-ui.html#/
 		},
 		{
 			"name": "jukes-info-controller",
-			"description": "jukes Info Controller"
+			"description": "Jukes Info Controller"
 		}
 	],
 	"paths": {
-		"/api/jukes": {
-			"get": {
-				"tags": [
-					"jukes-controller"
-				],
-				"summary": "Get Jukeboxs for a Setting.",
-				"operationId": "getJukeboxUsingGET",
-				"produces": [
-					"*/*"
-				],
-				"parameters": [
-					{
-						"name": "settingId",
-						"in": "query",
-						"description": "Setting id (required)",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"name": "model",
-						"in": "query",
-						"description": "A specific jukebox model Model name (optional)",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"name": "offset",
-						"in": "query",
-						"description": "Index start the page (optional)",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"name": "limit",
-						"in": "query",
-						"description": "Page size (optional)",
-						"required": false,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/Jukebox"
-							}
-						}
-					},
-					"401": {
-						"description": "Unauthorized"
-					},
-					"403": {
-						"description": "Forbidden"
-					},
-					"404": {
-						"description": "Not Found"
-					}
-				}
-			}
+		"/api/jukes": {			
 		},
-		"/api/tech-assignment/jukes": {
-			"get": {
-				"tags": [
-					"jukes-info-controller"
-				],
-				"summary": "Get Jukeboxs",
-				"description": "Get all jukes",
-				"operationId": "getJukesUsingGET",
-				"produces": [
-					"*/*"
-				],
-				"parameters": [
-					{
-						"name": "offset",
-						"in": "query",
-						"description": "Index start the page (optional)",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"name": "limit",
-						"in": "query",
-						"description": "Page size (optional)",
-						"required": false,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/Jukebox"
-							}
-						}
-					},
-					"401": {
-						"description": "Unauthorized"
-					},
-					"403": {
-						"description": "Forbidden"
-					},
-					"404": {
-						"description": "Not Found"
-					}
-				}
-			}
+		"/api/tech-assignment/jukes": {			
 		},
 		"/api/tech-assignment/settings": {
-			"get": {
-				"tags": [
-					"jukes-info-controller"
-				],
-				"summary": "Get Jukesettins",
-				"description": "Get all juke settins",
-				"operationId": "getSettingsUsingGET",
-				"produces": [
-					"*/*"
-				],
-				"parameters": [
-					{
-						"name": "offset",
-						"in": "query",
-						"description": "Index start the page (optional)",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"name": "limit",
-						"in": "query",
-						"description": "Page size (optional)",
-						"required": false,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/Jukebox"
-							}
-						}
-					},
-					"401": {
-						"description": "Unauthorized"
-					},
-					"403": {
-						"description": "Forbidden"
-					},
-					"404": {
-						"description": "Not Found"
-					}
-				}
-			}
 		}
 	},
 	"definitions": {
 		"Jukebox": {
-			"type": "object",
-			"properties": {
-				"components": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/JukeboxComponent"
-					}
-				},
-				"id": {
-					"type": "string"
-				},
-				"model": {
-					"type": "string"
-				}
-			},
-			"title": "Jukebox"
 		},
-		"JukeboxComponent": {
-			"type": "object",
-			"properties": {
-				"name": {
-					"type": "string"
-				}
-			},
-			"title": "JukeboxComponent"
+		"JukeboxComponent": {			
 		},
 		"JukeboxSetting": {
-			"type": "object",
-			"properties": {
-				"id": {
-					"type": "string"
-				},
-				"requires": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				}
-			},
-			"title": "JukeboxSetting"
 		},
 		"Result«List«JukeboxSetting»»": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/JukeboxSetting"
-					}
-				},
-				"message": {
-					"type": "string"
-				}
-			},
-			"title": "Result«List«JukeboxSetting»»"
 		},
-		"Result«List«Jukebox»»": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Jukebox"
-					}
-				},
-				"message": {
-					"type": "string"
-				}
-			},
-			"title": "Result«List«Jukebox»»"
+		"Result«List«Jukebox»»": {	
 		}
 	}
 }
-
 ```
 
 
@@ -319,7 +94,7 @@ http://localhost:8080/swagger-ui.html#/
 |                    |             |                        |           |      |         |
 |                    |             |                        |           |      |         |
 |                    | **Mapting** | **setting--> jukboxs** |           |      |         |
-| **settingMap**     | settingID   | jukBoxes              |           |      |         |
+| **settingMap**     | settingID   | jukBoxes               |           |      |         |
 |                    | S1          | J1                     | J2        |      |         |
 |                    | S2          | unavailable            |           |      |         |
 |                    | S3          | J1                     | J2        | J3   |         |
