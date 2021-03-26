@@ -14,8 +14,8 @@ import com.company.project.core.ResultCode;
 import com.company.project.core.ResultGenerator;
 
 @RestControllerAdvice
-public class GlobalDefaultExceptionHandler {
-	private final Logger log = LoggerFactory.getLogger(GlobalDefaultExceptionHandler.class);
+public class BizDefaultExceptionHandler {
+	private final Logger log = LoggerFactory.getLogger(BizDefaultExceptionHandler.class);
 
 	/**
 	 * BindException
