@@ -50,7 +50,7 @@ public class JukesServiceImpl implements JukesService {
 
 	private List<Jukebox> deepCloneList(List<Jukebox> jukeboxesbySetting) {
 		if (jukeboxesbySetting == null || jukeboxesbySetting.isEmpty()) {
-			return jukeboxesbySetting;
+			return new ArrayList<Jukebox>();
 		}
 		List<Jukebox> clonedjukeboxs = new ArrayList<Jukebox>();
 		for (Jukebox jukebox : jukeboxesbySetting) {
