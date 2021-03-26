@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 import com.company.project.dao.MockDbContainer;
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
-import com.company.project.service.JukesServiceInterface;
+import com.company.project.service.JukesService;
 
 @Service
 //public class JukesService implements JukesServiceInterface {
-public class JukesService implements JukesServiceInterface {
+public class JukesServiceImpl implements JukesService {
 	@Value("${api.default.pagesize}")
 	private int defaultPageSize;
 
@@ -73,7 +73,7 @@ public class JukesService implements JukesServiceInterface {
 	public List<Jukebox> getPaginatedJukesList(Optional<Integer> offset, Optional<Integer> limit) {
 		List<Jukebox> jukeboxes = MockDbContainer.getJukeboxes();
 		PagedListHolder<Jukebox> pagedListHolder = new PagedListHolder<Jukebox>(jukeboxes);
-		
+
 		pagedListHolder.setPage(offset.orElse(1));
 		pagedListHolder.setPageSize(limit.orElse(defaultPageSize));
 		return pagedListHolder.getPageList();
@@ -83,11 +83,10 @@ public class JukesService implements JukesServiceInterface {
 	public List<JukeboxSetting> getPaginatedJukeSettingList(Optional<Integer> offset, Optional<Integer> limit) {
 		List<JukeboxSetting> jukeSettings = MockDbContainer.getJukeSettings();
 		PagedListHolder<JukeboxSetting> pagedListHolder = new PagedListHolder<JukeboxSetting>(jukeSettings);
-		
+
 		pagedListHolder.setPage(offset.orElse(1));
 		pagedListHolder.setPageSize(limit.orElse(defaultPageSize));
 		return pagedListHolder.getPageList();
 	}
-
 
 }

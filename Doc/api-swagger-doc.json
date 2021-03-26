@@ -221,44 +221,6 @@
 				}
 			},
 			"title": "JukeboxSetting"
-		},
-		"Result«List«JukeboxSetting»»": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/JukeboxSetting"
-					}
-				},
-				"message": {
-					"type": "string"
-				}
-			},
-			"title": "Result«List«JukeboxSetting»»"
-		},
-		"Result«List«Jukebox»»": {
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "integer",
-					"format": "int32"
-				},
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Jukebox"
-					}
-				},
-				"message": {
-					"type": "string"
-				}
-			},
-			"title": "Result«List«Jukebox»»"
 		}
 	}
 }

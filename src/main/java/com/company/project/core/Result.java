@@ -1,9 +1,5 @@
 package com.company.project.core;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import net.bytebuddy.asm.Advice.This;
-
 /**
  * Unified API response result encapsulation
  */

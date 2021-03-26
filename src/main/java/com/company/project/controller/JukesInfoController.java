@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.company.project.core.ProjectConstant;
 import com.company.project.domain.Jukebox;
 import com.company.project.domain.JukeboxSetting;
-import com.company.project.service.JukesServiceInterface;
+import com.company.project.service.JukesService;
 
 /**
  * Jukebox API : Get all jukes. Settings API : Get all Settings.
@@ -29,7 +29,7 @@ import com.company.project.service.JukesServiceInterface;
 @RequestMapping(ProjectConstant.BASE_URL)
 public class JukesInfoController {
 	@Resource
-	private JukesServiceInterface jukesService;
+	private JukesService jukesService;
 
 	@Value("${api.default.pagesize}")
 	private int defaultPageSize;
